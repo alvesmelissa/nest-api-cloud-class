@@ -1,9 +1,9 @@
 FROM node:lts-alpine
 WORKDIR /app
 COPY . .
-RUN npm install - g @nestjs/cli
+RUN npm install -g @nestjs/cli
 RUN npm install --production
-RUN npm i --save-dev @type/node
+RUN npm i --save-dev @types/node
 RUN npm run build
 CMD ["npm", "run","start"]
 EXPOSE 3000
